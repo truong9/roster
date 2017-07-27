@@ -5,10 +5,14 @@
 	<title>roster</title>
 	<link rel="stylesheet" href="public/styles/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+	<link rel="stylesheet" href="public/styles/sweetalert.css">
+	<script src="https://use.fontawesome.com/d72068a2b1.js"></script>
 </head>
 <body>
 
 	<h1>NBA Rosters</h1>
+	<i class="fa fa-volume-off fa-3x" aria-hidden="true"></i>
+	<i class="fa fa-volume-up fa-3x" aria-hidden="true"></i>
 
 	<main class="teamContainer">
 		<div data-id="Hawks" class="team">
@@ -135,12 +139,18 @@
 	<div class="roster">
 		<div class="players">
 			<div class="banner"></div>
-			<ul></ul>
+			<ul class="position"></ul>
+			<ul class="name"></ul>
 		</div>
-		
 	</div>
 
+	<audio id="music" src="assets/panda.mp3">
+	<p>If you are reading this, it is because your browser does not support the audio element.</p>
+	</audio>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+	<script src="public/scripts/sweetalert.min.js"></script>
 
 	<script src="public/scripts/main.js"></script>
 	

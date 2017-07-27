@@ -8,18 +8,18 @@ $.ajax ({
 	dataType: 'json'
 }).then(function(res){
 	teams = res.cumulativeplayerstats.playerstatsentry;
-	console.log(teams)
+	console.log(teams);
 
 	$(`.team`).on('click', function(e){
 		$('.roster').css('display', 'block');
 		const number = $(this).index() + 1;
 		$('.banner').css('background-image', `url(../assets/${number}.jpg)`);
 		teamId = $(this).data('id');
-		console.log(teamId);
 
 		teams.map(player => {
 			if(player.team.Name === teamId){
-				$('.roster .players ul').append(`<li>${player.player.FirstName}</li>`)
+				$('.roster .players .position').append(`<li>${player.player.Position}</li>`)
+				$('.roster .players .name').append(`<li>${player.player.FirstName} ${player.player.LastName}</li>`)
 			}
 		})
 	});
@@ -29,11 +29,34 @@ $.ajax ({
 		$('.roster img').remove();
 		$('.roster .players ul').empty();
 	})
-
 });
+
+var music = document.getElementById('music');
+
+	if ($(window).width() > 750){
+		$('i').on('click', function(){
+			if(music.paused == false){
+				music.pause();
+				$('.fa-volume-up').css('visibility', 'hidden');
+				$('.fa-volume-off').css('visibility', 'visible');
+			} else {
+				music.play();
+				$('.fa-volume-up').css('visibility', 'visible');
+				$('.fa-volume-off').css('visibility', 'hidden');
+			}
+		});
+	} else {
+		music.pause();
+		$('i').css('display', 'none');
+	}
 
 
 
 $(function(){
+
+	swal({
+	  title: "Welcome to NBA Rosters",
+	  text: "Find the latest roster updates here"
+	});
 
 });

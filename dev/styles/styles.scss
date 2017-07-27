@@ -6,7 +6,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 body{
-	background: black;
+	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/jordan.jpg');
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 img{
@@ -25,6 +28,28 @@ h1{
 	text-align: center;
 }
 
+i{
+	color: white;
+	position: absolute;
+	top: 0%;
+	cursor: pointer;
+	padding: 10px 20px;
+}
+
+.fa-volume-up{
+	visibility: hidden;
+	right: 3%;
+}
+
+.fa-volume-off{
+	visibility: visible;
+	right: 4%;
+}
+
+audio{
+	display: none;
+}
+
 main.teamContainer{
 	width: 80%;
 	margin: 0 auto;
@@ -33,7 +58,6 @@ main.teamContainer{
 	flex-wrap: wrap;
 	justify-content: space-around;
 	div.team{
-		border: 1px black solid;
 		width: 33%;
 		p{
 			padding: 30px 0;
@@ -50,6 +74,10 @@ main.teamContainer{
 }
 
 div.roster{
+	font-family: 'Bungee', cursive;
+	font-weight: 100;
+	color: black;
+	font-size: 15px;
 	display: none;
 	position: fixed;
 	top: 0;
@@ -60,23 +88,101 @@ div.roster{
 	.players{
 		width: 70%;
 		max-width: 600px;
-		height: 80vh;
+		height: 85vh;
 		background: grey;
-		border: 1px black solid;
 		padding: 1%;
 		position: absolute;
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		.banner{
+			width: 100%;
+			height: 30%;
+			background-size: cover;
+			background-position: center;
+		}
+		ul{
+			list-style: none;
+			text-align: center;
+			padding: 0;
+			li{
+				margin: 6px 0;
+				letter-spacing: 1px;
+			}
+		}
+		.position{
+			width: 25%;
+			text-align: right;
+		}
+		.name{
+			width: 75%;
+		}
 	}
-	.banner{
-		width: 100%;
-		height: 30%;
-		background-size: cover;
-		background-position: center;
+
+}
+
+
+@media (max-width: 750px){
+	main.teamContainer{
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		div.team{
+			width: 50%;
+			p{
+				padding: 30px 0;
+				margin: 0;
+				font-size: 25px;
+				font-family: 'Bungee', cursive;
+				color: white;
+				cursor: pointer;
+				&:hover{
+					color: orangered;
+				}
+			}
+		}
+	}
+
+	div.roster{
+		font-size: 12px;
 	}
 }
 
+@media (max-width: 460px){
+	main.teamContainer{
+		width: 80%;
+		margin: 0 auto;
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		div.team{
+			width: 100%;
+			p{
+				padding: 30px 0;
+				margin: 0;
+				font-size: 25px;
+				font-family: 'Bungee', cursive;
+				color: white;
+				cursor: pointer;
+				&:hover{
+					color: orangered;
+				}
+			}
+		}
+	}
+
+	div.roster .players{
+		height: 75vh;
+	}
+
+}
 
 
 
