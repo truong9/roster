@@ -124,6 +124,7 @@ div.roster{
 
 }
 
+//RESPONSIVE
 
 @media (max-width: 750px){
 	main.teamContainer{
@@ -148,7 +149,6 @@ div.roster{
 			}
 		}
 	}
-
 	div.roster{
 		font-size: 12px;
 	}
@@ -177,13 +177,7 @@ div.roster{
 			}
 		}
 	}
-
 	div.roster .players{
 		height: 75vh;
 	}
-
 }
-
-
-
-
